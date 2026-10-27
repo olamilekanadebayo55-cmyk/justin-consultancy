@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Responsive rules (mobile-first base lives in global/components)
+   ========================================================================== */
+
+/* Desktop navigation from 960px up */
+@media (min-width: 960px) {
+  .nav {
+    display: flex;
+  }
+  .burger,
+  .mobile-nav {
+    display: none !important;
+  }
+  .hero__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+  .hero--home .hero__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  }
+  .hero--page .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Tablets and below */
+@media (max-width: 959px) {
+  .two-col,
+  .demo,
+  .faq__grid,
+  .cta__inner,
+  .group,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+  .mega__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero__visual {
+    max-width: 560px;
+  }
+  .cta__inner {
+    align-items: start;
+  }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+  .form__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .guide li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+  .srow__link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+  .srow__num {
+    display: none;
+  }
+  .srow__name {
+    font-size: 1.25rem;
+  }
+  .btn-row .btn {
+    flex: 1 1 100%;
+  }
+  .steps li {
+    padding-right: 0;
+  }
+  .project {
+    padding: 1.25rem;
+  }
+  .principle {
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+  .wordmark__main {
+    font-size: 1.45rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  :root {
+    --maxw: 1280px;
+  }
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .cta,
+  .skip-link {
+    display: none;
+  }
+  body {
+    background: #fff;
+  }
+}
