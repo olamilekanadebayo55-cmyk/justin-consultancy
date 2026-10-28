@@ -17,6 +17,8 @@ export const team = [
   { id: 'data-analyst', service: 'data-analysis', role: 'Data Analyst', initials: 'DA' },
   { id: 'prototyping-developer', service: 'vibe-coding', role: 'Rapid Prototyping Developer', initials: 'RP' },
   { id: 'security-specialist', service: 'website-security', role: 'Website Security Specialist', initials: 'WS' },
+  { id: 'frontend-developer', service: 'web-development', role: 'Front-End Developer', initials: 'FD' },
+  { id: 'motion-editor', service: 'video-editing', role: 'Motion Graphics Editor', initials: 'MG' },
   { id: 'seo-specialist', service: 'seo-digital-marketing', role: 'SEO & Digital Marketing Specialist', initials: 'SM' },
 ].map((m) => ({
   name: 'Name to be added',
