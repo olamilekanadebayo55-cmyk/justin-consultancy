@@ -13,7 +13,10 @@ import SEODigitalMarketing from './pages/SEODigitalMarketing.jsx';
 import Work from './pages/Work.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
-import Insights from './pages/Insights.jsx';
+import Specialists from './pages/Specialists.jsx';
+import Blog from './pages/Blog.jsx';
+import BlogPost from './pages/BlogPost.jsx';
+import Book from './pages/Book.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
@@ -33,7 +36,10 @@ export default function App() {
         <Route path="work" element={<Work />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="insights" element={<Insights />} />
+        <Route path="specialists" element={<Specialists />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="blog/:slug" element={<BlogPost />} />
+        <Route path="book" element={<Book />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
