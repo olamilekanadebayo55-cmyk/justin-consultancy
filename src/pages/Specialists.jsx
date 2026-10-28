@@ -44,7 +44,7 @@ export default function Specialists() {
               writing, rapid prototyping, website security, SEO and digital marketing.
             </p>
             <p>
-              We bring the right skills together based on each project whether you need a high-performing website, an
+              We bring the right skills together based on each project, whether you need a high-performing website, an
               automated workflow, better data insights, engaging content, or improved online visibility.
             </p>
             <p>
