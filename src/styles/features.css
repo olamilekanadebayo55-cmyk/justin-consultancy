@@ -309,3 +309,80 @@
     height: 820px;
   }
 }
+
+/* ---------- Home hero with photo ---------- */
+
+.hero.hero--photo {
+  padding: 0;
+}
+.hero--photo::before {
+  display: none;
+}
+.hero--photo .hero__bg {
+  display: block;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-height: 60vh;
+  width: 100%;
+  background: var(--ink-2);
+}
+.hero--photo .hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 50%;
+}
+.hero--photo .hero__bg::after {
+  /* fades the bottom of the photo into the navy text area on small screens */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, var(--ink) 100%);
+}
+.hero.hero--photo .hero__grid {
+  grid-template-columns: minmax(0, 1fr);
+  padding-block: 1.5rem clamp(3rem, 8vw, 4.5rem);
+}
+.hero--photo .hero__copy {
+  max-width: 40rem;
+}
+
+/* Wide screens: photo becomes the background, text sits on the dark left side */
+@media (min-width: 1100px) {
+  .hero.hero--photo {
+    display: flex;
+    align-items: center;
+    min-height: clamp(560px, 82vh, 780px);
+  }
+  .hero--photo .hero__bg {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+    max-height: none;
+    height: 100%;
+  }
+  .hero--photo .hero__bg img {
+    object-position: 70% 50%;
+  }
+  .hero--photo .hero__bg::after {
+    background: linear-gradient(
+      90deg,
+      rgba(10, 16, 36, 0.96) 0%,
+      rgba(10, 16, 36, 0.88) 34%,
+      rgba(10, 16, 36, 0.45) 58%,
+      rgba(10, 16, 36, 0.05) 80%
+    );
+  }
+  .hero.hero--photo .hero__grid {
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+  .hero.hero--photo > .wrap {
+    z-index: 1;
+  }
+  .hero--photo .hero__copy {
+    max-width: 38rem;
+  }
+  .hero--photo .display {
+    font-size: clamp(2.6rem, 4.6vw, 4.4rem);
+  }
+}
