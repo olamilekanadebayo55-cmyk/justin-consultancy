@@ -11,33 +11,22 @@ import { projects } from '../data/projects.js';
 
 const featured = ['consultancy-site', 'lead-flow', 'security-baseline'].map((id) => projects.find((p) => p.id === id));
 
-function StageVisual() {
-  const steps = [0, 1, 2, 3, 4];
-  return (
-    <svg className="stage" viewBox="0 0 520 440" role="img" aria-label="Illustration of five ascending steps, the last one highlighted">
-      {steps.map((i) => (
-        <g key={i}>
-          <rect
-            x={20 + i * 96}
-            y={360 - i * 64}
-            width="88"
-            height={64 + i * 64}
-            className={i === 4 ? 'st-accent' : 'st-fill'}
-          />
-          <text x={28 + i * 96} y={350 - i * 64} className="st-text">
-            {String(i + 1).padStart(2, '0')}
-          </text>
-        </g>
-      ))}
-      <path d="M20 424H500" className="st-line" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <>
-      <section className="hero hero--home">
+      <section className="hero hero--home hero--photo">
+        <picture className="hero__bg">
+          <img
+            src="/hero-1280.webp"
+            srcSet="/hero-640.webp 640w, /hero-960.webp 960w, /hero-1280.webp 1280w, /hero-1920.webp 1920w"
+            sizes="100vw"
+            width="1920"
+            height="1072"
+            alt="A small team meeting around a table, with a workflow diagram on the wall screen behind them"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="wrap hero__grid">
           <div className="hero__copy">
             <p className="eyebrow eyebrow--light">Digital consultancy</p>
@@ -58,9 +47,6 @@ export default function Home() {
               For businesses, entrepreneurs, creators and organizations. We scope honestly and do not promise rankings,
               revenue or other outcomes we cannot control.
             </p>
-          </div>
-          <div className="hero__visual" aria-hidden="false">
-            <StageVisual />
           </div>
         </div>
       </section>
@@ -147,6 +133,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="section section--tint" aria-labelledby="team-t">
         <div className="wrap">
           <div className="section-head">
@@ -170,6 +157,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="section section--dark" aria-labelledby="process-t">
         <div className="wrap">
           <p className="eyebrow eyebrow--light">How we work</p>
@@ -211,6 +199,7 @@ export default function Home() {
           </ol>
         </div>
       </section>
+
       <section className="section" aria-labelledby="blog-t">
         <div className="wrap">
           <div className="section-head">
@@ -242,6 +231,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <FAQSection faqs={homeFaqs} id="home-faq" />
 
       <CTASection
