@@ -30,12 +30,28 @@ export default function Specialists() {
       <section className="section" aria-labelledby="team-t">
         <div className="wrap">
           <h2 id="team-t" className="h2">
-            Meet the team
+            Meet the team behind Just In Consultancy
           </h2>
-          <p className="muted" style={{ maxWidth: '62ch' }}>
-            Profiles marked “Placeholder profile” are waiting for real names, photos and Fiverr links. They will be
-            replaced before launch.
-          </p>
+          <div className="prose" style={{ marginTop: '1.25rem' }}>
+            <p>
+              <strong>
+                We’re a team of digital specialists helping businesses solve practical technology and growth
+                challenges.
+              </strong>
+            </p>
+            <p>
+              Our expertise spans web development, AI automation, data analysis, video editing, research and content
+              writing, rapid prototyping, website security, SEO and digital marketing.
+            </p>
+            <p>
+              We bring the right skills together based on each project—whether you need a high-performing website, an
+              automated workflow, better data insights, engaging content, or improved online visibility.
+            </p>
+            <p>
+              Our approach is simple: understand the problem, build the right solution, and deliver work that creates
+              real value.
+            </p>
+          </div>
           <div className="team-grid">
             {team.map((m) => (
               <TeamCard key={m.id} member={m} />
