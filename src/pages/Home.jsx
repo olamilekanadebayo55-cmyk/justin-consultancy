@@ -3,6 +3,9 @@ import CTASection from '../components/CTASection.jsx';
 import FAQSection from '../components/FAQSection.jsx';
 import ServiceCard from '../components/ServiceCard.jsx';
 import ProjectCard from '../components/ProjectCard.jsx';
+import TeamCard from '../components/TeamCard.jsx';
+import { posts, formatDate } from '../data/blog.js';
+import { team } from '../data/team.js';
 import { groups, homeFaqs, principles, processSteps } from '../data/site.js';
 import { projects } from '../data/projects.js';
 
@@ -144,7 +147,29 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <section className="section section--tint" aria-labelledby="team-t">
+        <div className="wrap">
+          <div className="section-head">
+            <p className="eyebrow">Our specialists</p>
+            <h2 id="team-t" className="h2">
+              A dedicated professional for every service.
+            </h2>
+            <p className="muted" style={{ maxWidth: '58ch' }}>
+              Each service is led by a specialist who does that work every day. Meet them, and view their profiles.
+            </p>
+          </div>
+          <ul className="team-mini">
+            {team.map((m) => (
+              <TeamCard key={m.id} member={m} compact />
+            ))}
+          </ul>
+          <div className="btn-row">
+            <Link className="btn btn--dark" to="/specialists/">
+              Meet the Specialists
+            </Link>
+          </div>
+        </div>
+      </section>
       <section className="section section--dark" aria-labelledby="process-t">
         <div className="wrap">
           <p className="eyebrow eyebrow--light">How we work</p>
@@ -186,12 +211,44 @@ export default function Home() {
           </ol>
         </div>
       </section>
-
+      <section className="section" aria-labelledby="blog-t">
+        <div className="wrap">
+          <div className="section-head">
+            <p className="eyebrow">From the blog</p>
+            <h2 id="blog-t" className="h2">
+              Practical guides, in plain language.
+            </h2>
+          </div>
+          <ul className="blog-list">
+            {posts.slice(0, 3).map((p) => (
+              <li key={p.slug} className="blog-row">
+                <article>
+                  <p className="blog-row__meta">
+                    <span className="tag">{p.category}</span>
+                    <time dateTime={p.date}>{formatDate(p.date)}</time>
+                  </p>
+                  <h3 className="blog-row__title">
+                    <Link to={`/blog/${p.slug}/`}>{p.title}</Link>
+                  </h3>
+                  <p className="blog-row__excerpt">{p.excerpt}</p>
+                </article>
+              </li>
+            ))}
+          </ul>
+          <div className="btn-row">
+            <Link className="btn btn--dark" to="/blog/">
+              Read the Blog
+            </Link>
+          </div>
+        </div>
+      </section>
       <FAQSection faqs={homeFaqs} id="home-faq" />
 
       <CTASection
         title="Let’s work out your next step."
-        text="Send a short description of what you need. You will get questions or a proposed scope back before any work begins."
+        text="Book a 30-minute consultation, or send a short description of what you need. You will get questions or a proposed scope back before any work begins."
+        primary={{ to: '/book/', label: 'Book a Consultation' }}
+        secondary={{ to: '/contact/', label: 'Start a Project' }}
       />
     </>
   );
