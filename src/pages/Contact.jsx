@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { serviceList } from '../data/services.js';
 import { site } from '../data/site.js';
 
@@ -242,6 +242,12 @@ export default function Contact() {
                 <li>We reply by your preferred method, usually with questions or a proposed scope.</li>
                 <li>If it is a fit, you receive a written scope before any work begins.</li>
               </ol>
+            </div>
+            <div className="aside-box">
+              <h2>Prefer to talk?</h2>
+              <p>
+                <Link to="/book/">Book a 30-minute consultation</Link> and pick a time that suits you.
+              </p>
             </div>
             {(contact.email || contact.phone || contact.whatsapp || contact.location) && (
               <div className="aside-box">
