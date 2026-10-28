@@ -235,8 +235,8 @@ export const services = {
       label: 'Illustrative example',
       title: 'Content brief structure',
       text: 'The outline above is an example of the structure we use for a content brief. It is a template, not a published article. Genuine writing samples will be added once approved for publication.',
-      href: '/insights/',
-      cta: 'Visit Insights',
+      href: '/blog/',
+      cta: 'Read the blog',
     },
     faqs: [
       { q: 'Do you cite sources?', a: 'Yes. Factual claims are tied to sources, and we provide the list so your team can check them.' },
