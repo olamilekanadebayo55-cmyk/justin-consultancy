@@ -5,9 +5,10 @@ import { groups } from '../data/site.js';
 import { getService } from '../data/services.js';
 
 const simpleLinks = [
+  { to: '/specialists/', label: 'Specialists' },
   { to: '/work/', label: 'Our Work' },
+  { to: '/blog/', label: 'Blog' },
   { to: '/about/', label: 'About' },
-  { to: '/insights/', label: 'Insights' },
 ];
 
 function ServicesMenuContent() {
@@ -103,8 +104,8 @@ export default function Header() {
               {l.label}
             </NavLink>
           ))}
-          <Link to="/contact/" className="btn btn--accent btn--sm">
-            Start a Project
+          <Link to="/book/" className="btn btn--accent btn--sm">
+            Book a Consultation
           </Link>
         </nav>
 
@@ -147,7 +148,10 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Link to="/contact/" className="btn btn--accent btn--block">
+          <Link to="/book/" className="btn btn--accent btn--block">
+            Book a Consultation
+          </Link>
+          <Link to="/contact/" className="btn btn--ghost btn--block" style={{ marginTop: '0.75rem' }}>
             Start a Project
           </Link>
         </div>
