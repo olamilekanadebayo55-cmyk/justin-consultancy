@@ -14,9 +14,14 @@ export default function Footer() {
           <p>
             Practical digital services: web, video, automation, research, data, security and marketing.
           </p>
-          <Link to="/contact/" className="btn btn--accent btn--sm">
-            Start a Project
-          </Link>
+        <div className="btn-row" style={{ marginTop: 0 }}>
+            <Link to="/book/" className="btn btn--accent btn--sm">
+              Book a Consultation
+            </Link>
+            <Link to="/contact/" className="btn btn--ghost btn--sm">
+              Start a Project
+            </Link>
+          </div>
           {(contact.email || contact.phone || contact.whatsapp || contact.location || socials.length > 0) && (
             <ul className="site-footer__contact">
               {contact.email && (
@@ -67,16 +72,19 @@ export default function Footer() {
               <Link to="/services/">All services</Link>
             </li>
             <li>
+              <Link to="/specialists/">Specialists</Link>
+            </li>
+            <li>
               <Link to="/work/">Our Work</Link>
+            </li>
+            <li>
+              <Link to="/blog/">Blog</Link>
             </li>
             <li>
               <Link to="/about/">About</Link>
             </li>
             <li>
-              <Link to="/insights/">Insights</Link>
-            </li>
-            <li>
-              <Link to="/contact/">Contact</Link>
+              <Link to="/book/">Book a Consultation</Link>
             </li>
           </ul>
         </nav>
