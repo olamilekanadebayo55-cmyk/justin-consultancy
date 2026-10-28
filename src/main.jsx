@@ -5,6 +5,7 @@ import '@fontsource-variable/fraunces';
 import '@fontsource-variable/inter';
 import './styles/global.css';
 import './styles/components.css';
+import './styles/features.css';
 import './styles/responsive.css';
 import App from './App.jsx';
 
