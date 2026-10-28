@@ -15,6 +15,10 @@ export const site = {
     whatsapp: '',
     location: '',
   },
+    // Calendly scheduling page shown on /book/.
+  booking: {
+    calendlyUrl: 'https://calendly.com/oriswurld2/30min',
+  },
   social: {
     // linkedin: 'https://www.linkedin.com/...',
     // youtube: 'https://www.youtube.com/...',
