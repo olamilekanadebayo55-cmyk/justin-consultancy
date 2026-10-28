@@ -1,4 +1,5 @@
 import { serviceList } from './services.js';
+import { posts } from './blog.js';
 
 // Single source of truth for per-route SEO metadata and the sitemap.
 // Keys are normalised paths WITH a trailing slash.
@@ -29,15 +30,29 @@ const pages = {
     description:
       'Send a project inquiry to Just In Consultancy. Tell us what you need and which service fits, and we will reply with questions or a proposed scope.',
   },
-  '/insights/': {
-    title: 'Insights | Just In Consultancy',
+  '/specialists/': {
+    title: 'Our Specialists | Web, Video, Automation & More | Just In Consultancy',
     description:
-      'Upcoming articles on web development, AI automation, video editing, research and writing, data analysis, website security and SEO.',
+      'Meet the specialists behind each Just In Consultancy service: web development, video editing, AI automation, writing, data, security and SEO.',
+  },
+  '/blog/': {
+    title: 'Blog | Practical Guides on Web, Automation & Security | Just In Consultancy',
+    description:
+      'Practical, plain-language guides on web development, AI automation, website security, SEO, video, writing and data from Just In Consultancy.',
+  },
+  '/book/': {
+    title: 'Book a 30-Minute Consultation | Just In Consultancy',
+    description:
+      'Pick a time for a 30-minute consultation with Just In Consultancy to discuss your project and which services fit. Scheduling via Calendly.',
   },
 };
 
 for (const s of serviceList) {
   pages[`/services/${s.slug}/`] = { title: s.meta.title, description: s.meta.description };
+}
+
+for (const p of posts) {
+  pages[`/blog/${p.slug}/`] = { title: `${p.metaTitle} | Just In Consultancy`, description: p.description, article: p };
 }
 
 export const notFoundMeta = {
