@@ -4,6 +4,9 @@ import { groups } from '../data/site.js';
 import Signature from './Signatures.jsx';
 import FAQSection from './FAQSection.jsx';
 import CTASection from './CTASection.jsx';
+import Avatar from './Avatar.jsx';
+import FiverrButton from './FiverrButton.jsx';
+import { getSpecialistForService } from '../data/team.js';
 
 /**
  * Renders a service page from its data entry. Each service has its own page component
@@ -12,6 +15,7 @@ import CTASection from './CTASection.jsx';
 export default function ServicePage({ slug, variant = 'split' }) {
   const s = getService(slug);
   const group = groups.find((g) => g.id === s.group);
+  const specialist = getSpecialistForService(s.slug);
   return (
     <>
       <section className={`hero hero--service hero--${variant}`}>
@@ -145,6 +149,28 @@ export default function ServicePage({ slug, variant = 'split' }) {
           </div>
         </div>
       </section>
+            {specialist && (
+        <section className="section section--tint" aria-labelledby="spec-t">
+          <div className="wrap specialist-strip">
+            <Avatar member={specialist} size="md" />
+            <div>
+              <p className="eyebrow">Your specialist</p>
+              <h2 id="spec-t" className="h2">
+                {specialist.role}
+              </h2>
+              <p className="muted" style={{ maxWidth: '58ch' }}>
+                {specialist.placeholder ? 'Profile to be added.' : specialist.bio}
+              </p>
+              <div className="btn-row">
+                <FiverrButton member={specialist} />
+                <Link className="btn btn--sm btn--ghost-dark" to="/specialists/">
+                  All specialists
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <FAQSection faqs={s.faqs} id={`${s.slug}-faq`} title={`${s.name}: common questions`} />
 
@@ -170,7 +196,7 @@ export default function ServicePage({ slug, variant = 'split' }) {
       <CTASection
         title={`Ready to talk about ${s.name.toLowerCase()}?`}
         primary={{ to: `/contact/?service=${s.slug}`, label: 'Request a Quote' }}
-        secondary={{ to: '/work/', label: 'View Our Work' }}
+        secondary={{ to: '/book/', label: 'Book a Consultation' }}
       />
     </>
   );
