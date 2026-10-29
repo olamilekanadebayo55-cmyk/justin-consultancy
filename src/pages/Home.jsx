@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-            <section className="section" aria-labelledby="intro-t">
+      <section className="section" aria-labelledby="intro-t">
         <div className="wrap two-col">
           <div>
             <p className="eyebrow">Who we are</p>
