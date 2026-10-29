@@ -117,12 +117,22 @@ export default function Home() {
           <div className="section-head">
             <p className="eyebrow">Selected work</p>
             <h2 id="work-t" className="h2">
-              Demonstrations of how we approach projects.
+              Digital solutions built around real business needs.
             </h2>
-            <p className="muted" style={{ maxWidth: '58ch' }}>
-              These are clearly labeled demo and concept projects. They show our process and standards; they are not
-              client work, and no results are claimed.
-            </p>
+            <div className="prose" style={{ marginTop: '1.25rem' }}>
+              <p>
+                Explore our work across web development, AI automation, SEO, digital marketing, data analysis, and
+                other digital services. Each project reflects our approach to solving business challenges, connecting
+                technology, and creating practical solutions that support growth.
+              </p>
+              <p>
+                From business websites to intelligent workflows, discover how we turn ideas into effective digital
+                experiences.
+              </p>
+              <p className="muted" style={{ maxWidth: '58ch' }}>
+                Projects shown are labeled demo or concept work, not client results.
+              </p>
+            </div>
           </div>
           <div className="projects">
             {featured.map((p) => (
