@@ -18,19 +18,6 @@ export default function Work() {
           </div>
         </div>
       </section>
-
-      <section className="section" aria-labelledby="proj-t">
-          <h2 id="proj-t" className="sr-only">
-            Projects
-          </h2>
-          <div className="projects projects--detailed">
-            {projects.map((p) => (
-              <ProjectCard key={p.id} project={p} detailed />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section section--tint" aria-labelledby="real-t">
         <div className="wrap two-col">
           <div>
