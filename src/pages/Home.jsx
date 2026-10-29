@@ -114,13 +114,15 @@ export default function Home() {
 
       <section className="section" aria-labelledby="work-t">
         <div className="wrap">
-          <div className="section-head">
-            <p className="eyebrow">Selected work</p>
-            <h2 id="work-t" className="h2">
-              Digital solutions built around real business needs.
-            </h2>
-            <div className="prose" style={{ marginTop: '1.25rem' }}>
-              <p>
+          <div className="two-col" style={{ marginBottom: 'clamp(2rem, 5vw, 3.25rem)' }}>
+            <div>
+              <p className="eyebrow">Selected work</p>
+              <h2 id="work-t" className="h2">
+                Digital solutions built around real business needs.
+              </h2>
+            </div>
+            <div className="prose">
+              <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.25rem)', color: 'var(--text)' }}>
                 Explore our work across web development, AI automation, SEO, digital marketing, data analysis, and
                 other digital services. Each project reflects our approach to solving business challenges, connecting
                 technology, and creating practical solutions that support growth.
@@ -128,9 +130,6 @@ export default function Home() {
               <p>
                 From business websites to intelligent workflows, discover how we turn ideas into effective digital
                 experiences.
-              </p>
-              <p className="muted" style={{ maxWidth: '58ch' }}>
-                Projects shown are labeled demo or concept work, not client results.
               </p>
             </div>
           </div>
