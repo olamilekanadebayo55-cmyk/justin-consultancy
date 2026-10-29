@@ -20,11 +20,6 @@ export default function Work() {
       </section>
 
       <section className="section" aria-labelledby="proj-t">
-        <div className="wrap">
-          <div className="notice" role="note">
-            <strong>Please note:</strong> none of the projects below is paid client work, and none claims results,
-            testimonials or statistics. Each is labeled Demo build, Concept project or Illustrative example.
-          </div>
           <h2 id="proj-t" className="sr-only">
             Projects
           </h2>
