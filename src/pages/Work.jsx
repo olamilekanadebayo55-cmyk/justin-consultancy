@@ -10,10 +10,10 @@ export default function Work() {
         <div className="wrap hero__grid">
           <div className="hero__copy">
             <p className="eyebrow eyebrow--light">Our work</p>
-            <h1 className="display display--md">Demonstrations, honestly labeled.</h1>
+            <h1 className="display display--md">Digital solutions designed around your business.</h1>
             <p className="lede">
-              Real client projects will appear here once they are available and approved for publication. Until then,
-              these concept and demo projects show how we approach each service.
+              Explore our work across web development, AI automation, SEO, digital marketing, and data analysis. 
+              Discover how we approach business challenges, connect technology, and build practical digital solutions.
             </p>
           </div>
         </div>
@@ -23,17 +23,17 @@ export default function Work() {
           <div>
             <p className="eyebrow">Adding real projects</p>
             <h2 id="real-t" className="h2">
-              Have a similar project in mind?
+              Let's solve your next digital challenge.
             </h2>
           </div>
           <div className="prose">
             <p>
-              Tell us what you are trying to do and we will explain how we would approach it, what it would involve
-              and what we would need from you.
+              Tell us what your business needs. 
+              We'll discuss your goals, recommend the right digital services, and outline a practical approach to bringing your project to life.
             </p>
             <div className="btn-row">
               <Link className="btn btn--dark" to="/contact/">
-                Discuss a Similar Project
+                Discuss Your Project
               </Link>
               <Link className="btn btn--ghost-dark" to="/services/">
                 Explore Our Services
