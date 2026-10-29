@@ -91,7 +91,6 @@ export default function Footer() {
       </div>
       <div className="wrap site-footer__legal">
         <p>© {new Date().getFullYear()} Just In Consultancy. All rights reserved.</p>
-        <p>Portfolio items are labeled concept or demo projects unless stated otherwise.</p>
       </div>
     </footer>
   );
